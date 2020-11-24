@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sQz-nt-qTk">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FavoriteListViewController-->
+        <scene sceneID="qtJ-dI-Jrr">
+            <objects>
+                <viewController id="aQa-ZK-kSu" userLabel="FavoriteListViewController" customClass="FavoriteListViewController" customModule="WeatherSmaple" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fva-HP-GTe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MFd-LE-O6w">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="aQa-ZK-kSu" id="KoA-Jg-Kfi"/>
+                                    <outlet property="delegate" destination="aQa-ZK-kSu" id="vQM-jU-6t5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RkW-JY-Sca"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RkW-JY-Sca" firstAttribute="trailing" secondItem="MFd-LE-O6w" secondAttribute="trailing" id="U2p-y0-Ahz"/>
+                            <constraint firstItem="RkW-JY-Sca" firstAttribute="bottom" secondItem="MFd-LE-O6w" secondAttribute="bottom" id="aFa-1I-a11"/>
+                            <constraint firstItem="MFd-LE-O6w" firstAttribute="leading" secondItem="RkW-JY-Sca" secondAttribute="leading" id="uKa-U7-ZYp"/>
+                            <constraint firstItem="MFd-LE-O6w" firstAttribute="top" secondItem="RkW-JY-Sca" secondAttribute="top" id="uY1-Pe-IF5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sn5-g4-s96"/>
+                    <connections>
+                        <outlet property="favoriteCities" destination="MFd-LE-O6w" id="iwQ-Ip-Lox"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GQu-9U-kGg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2058" y="232"/>
+        </scene>
+        <!--WeatherListViewController-->
+        <scene sceneID="MuA-vG-jy4">
+            <objects>
+                <viewController id="6Uw-tD-fXz" userLabel="WeatherListViewController" customClass="WeatherListViewController" customModule="WeatherSmaple" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="re9-cH-LtD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PvL-Ec-Wne">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Uw-tD-fXz" id="K4o-Xt-rgS"/>
+                                    <outlet property="delegate" destination="6Uw-tD-fXz" id="Mkh-lV-mXY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zbB-lq-CuE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PvL-Ec-Wne" firstAttribute="top" secondItem="zbB-lq-CuE" secondAttribute="top" id="2es-Gy-thT"/>
+                            <constraint firstItem="zbB-lq-CuE" firstAttribute="trailing" secondItem="PvL-Ec-Wne" secondAttribute="trailing" id="FkG-bI-Ryd"/>
+                            <constraint firstItem="PvL-Ec-Wne" firstAttribute="leading" secondItem="zbB-lq-CuE" secondAttribute="leading" id="gZA-Kd-DAu"/>
+                            <constraint firstItem="zbB-lq-CuE" firstAttribute="bottom" secondItem="PvL-Ec-Wne" secondAttribute="bottom" id="rnU-u6-J8A"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LBw-u6-6bl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="S00-ZD-IZt">
+                            <connections>
+                                <action selector="didTapAdd:" destination="6Uw-tD-fXz" id="28H-Na-cBh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cities" destination="PvL-Ec-Wne" id="e84-9D-D0Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dJH-je-zyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2058" y="-454"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="htt-gz-ojR">
+            <objects>
+                <tabBarController id="sQz-nt-qTk" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TnV-zo-TLQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="o4m-LD-Zgf" kind="relationship" relationship="viewControllers" id="f5z-N0-d6m"/>
+                        <segue destination="SZt-Bk-eUb" kind="relationship" relationship="viewControllers" id="0OQ-Mq-DGx"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cWL-84-ocF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-717" y="-107"/>
+        </scene>
+        <!--Cities-->
+        <scene sceneID="ftf-Wo-TeY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o4m-LD-Zgf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cities" image="city" id="nin-Y8-fUM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1ce-4C-Tqo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Uw-tD-fXz" kind="relationship" relationship="rootViewController" id="aZa-yK-THb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQc-Ls-rps" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984" y="-454"/>
+        </scene>
+        <!--Favoriters-->
+        <scene sceneID="9Pp-tp-TQi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SZt-Bk-eUb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favoriters" image="favorite" id="vAD-46-sUo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fcy-vv-9hE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aQa-ZK-kSu" kind="relationship" relationship="rootViewController" id="GAu-XN-80h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y3w-ca-kHM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="983" y="232"/>
+        </scene>
+        <!--City Waiting List Controller-->
+        <scene sceneID="0eQ-rl-PYz">
+            <objects>
+                <viewController storyboardIdentifier="cityWaitingListViewController" id="UvW-Tu-2es" customClass="CityWaitingListController" customModule="WeatherSmaple" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FpS-Tv-A32">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X2A-Nf-npd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="UvW-Tu-2es" id="fhq-Nm-JCd"/>
+                                    <outlet property="delegate" destination="UvW-Tu-2es" id="Qnw-VM-95F"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wZE-Le-ghY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X2A-Nf-npd" firstAttribute="leading" secondItem="wZE-Le-ghY" secondAttribute="leading" id="3Ph-7K-Kru"/>
+                            <constraint firstItem="wZE-Le-ghY" firstAttribute="bottom" secondItem="X2A-Nf-npd" secondAttribute="bottom" id="WfD-Ff-5uA"/>
+                            <constraint firstItem="X2A-Nf-npd" firstAttribute="top" secondItem="wZE-Le-ghY" secondAttribute="top" id="bV5-rX-Cll"/>
+                            <constraint firstItem="wZE-Le-ghY" firstAttribute="trailing" secondItem="X2A-Nf-npd" secondAttribute="trailing" id="lWK-R3-xEF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZHj-te-gcE"/>
+                    <connections>
+                        <outlet property="tableView" destination="X2A-Nf-npd" id="WZ6-o6-kuS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QW8-Cx-mZp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014" y="1077"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="city" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="favorite" width="21.333333969116211" height="21.333333969116211"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
